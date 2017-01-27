@@ -5,6 +5,16 @@ resources:
     uri: https://github.com/gnomesoftuk/flight-school
     branch: master
 
+- name: version
+  type: semver
+  source:
+    bucket: concourse-test-rew
+    key: current-version
+    #access_key_id: {{s3-access-key-id}}
+    #secret_access_key: {{s3-secret-access-key}}
+    initial_version: 1.0.0
+
+
 jobs:
 - name: test-app
   plan:
